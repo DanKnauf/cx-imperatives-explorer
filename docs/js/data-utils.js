@@ -67,7 +67,8 @@ window.CX.DataUtils = (() => {
 
     return {
       type: question.type,
-      crossTabColumns: question.crossTabColumns || [],
+      // Topline questions store values under the 'NET' key; crossTabColumns is null in JSON
+      crossTabColumns: question.crossTabColumns || (question.type === 'topline' ? ['NET'] : []),
       responses: question.responses || [],
       netValues: question.netValues || {},
       columnN: question.columnN || {},
