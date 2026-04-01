@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Merkle CX Imperatives 2026 - Interactive Consumer Survey Data Explorer" />
+  <title>CX Imperatives 2026 | Merkle Data Explorer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ECharts -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+
+  <!-- App Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="header-brand">
+        <div class="brand-logo" aria-label="Merkle">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="32" height="32" rx="4" fill="#3ECAC8"/>
+            <path d="M8 22V10l8 6 8-6v12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="brand-name">Merkle</span>
+        </div>
+        <div class="header-divider" aria-hidden="true"></div>
+        <div class="header-title">
+          <h1>CX Imperatives <span class="year-badge">2026</span></h1>
+          <p class="header-subtitle">Consumer Survey Data Explorer</p>
+        </div>
+      </div>
+      <nav class="header-nav" role="navigation" aria-label="Main navigation">
+        <button class="nav-btn" id="btn-home" data-view="home" aria-current="page">Overview</button>
+        <button class="nav-btn" id="btn-screening" data-view="section" data-section="screening">Screening</button>
+        <button class="nav-btn" id="btn-cx" data-view="section" data-section="cx-activities">CX Activities</button>
+        <button class="nav-btn" id="btn-personalization" data-view="section" data-section="personalization">Personalization</button>
+        <button class="nav-btn" id="btn-digital" data-view="section" data-section="digital-ai">Digital & AI</button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN APP ===== -->
+  <main id="app-root" role="main">
+
+    <!-- HOME VIEW -->
+    <div id="view-home" class="view active" role="region" aria-label="Overview">
+      <div class="hero-section">
+        <div class="hero-content">
+          <div class="hero-tag">2026 Consumer Research</div>
+          <h2 class="hero-title">CX Imperatives 2026</h2>
+          <p class="hero-lead">
+            Explore Merkle's annual consumer experience research — 2,500 respondents across 30 countries
+            reveal what drives loyalty, trust, and the future of AI-powered brand interactions.
+          </p>
+          <div class="hero-stats" role="list">
+            <div class="stat-card" role="listitem">
+              <span class="stat-number">2,500</span>
+              <span class="stat-label">Respondents</span>
+            </div>
+            <div class="stat-card" role="listitem">
+              <span class="stat-number">30</span>
+              <span class="stat-label">Countries</span>
+            </div>
+            <div class="stat-card" role="listitem">
+              <span class="stat-number">34</span>
+              <span class="stat-label">Questions</span>
+            </div>
+            <div class="stat-card" role="listitem">
+              <span class="stat-number">19</span>
+              <span class="stat-label">Brand Categories</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div id="hero-chart"></div>
+        </div>
+      </div>
+
+      <div class="section-cards-grid" role="list" aria-label="Survey sections">
+        <article class="section-card" role="listitem" tabindex="0" data-section="screening" aria-label="Screening and Classification section">
+          <div class="section-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="5" stroke="currentColor" stroke-width="2"/><path d="M4 24c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="section-card-content">
+            <div class="section-card-tag">Section 1</div>
+            <h3 class="section-card-title">Screening &amp; Classification</h3>
+            <p class="section-card-desc">Demographics: age, country, household, net worth, brand categories, and CX activities across 12 questions.</p>
+            <div class="section-card-meta">12 questions &middot; Topline data</div>
+          </div>
+          <div class="section-card-arrow" aria-hidden="true">&#8594;</div>
+        </article>
+
+        <article class="section-card" role="listitem" tabindex="0" data-section="cx-activities" aria-label="CX Activities and Expectations section">
+          <div class="section-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="6" width="22" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 14h12M8 10h6M8 18h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="section-card-content">
+            <div class="section-card-tag">Section 2</div>
+            <h3 class="section-card-title">CX Activities &amp; Expectations</h3>
+            <p class="section-card-desc">Channel usage, experience importance ratings, agreement with CX statements, and post-experience outcomes by sector.</p>
+            <div class="section-card-meta">4 questions &middot; Cross-tab by sector &amp; category</div>
+          </div>
+          <div class="section-card-arrow" aria-hidden="true">&#8594;</div>
+        </article>
+
+        <article class="section-card" role="listitem" tabindex="0" data-section="personalization" aria-label="Personalization and High-Touch CX section">
+          <div class="section-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 3l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="section-card-content">
+            <div class="section-card-tag">Section 3</div>
+            <h3 class="section-card-title">Personalization &amp; High-Touch CX</h3>
+            <p class="section-card-desc">Personalization preferences, data sentiment, perceived helpfulness, and high-touch experience attitudes.</p>
+            <div class="section-card-meta">7 questions &middot; Dual cross-tab</div>
+          </div>
+          <div class="section-card-arrow" aria-hidden="true">&#8594;</div>
+        </article>
+
+        <article class="section-card" role="listitem" tabindex="0" data-section="digital-ai" aria-label="Digital Experiences and AI section">
+          <div class="section-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="3" width="10" height="10" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="15" y="3" width="10" height="10" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="3" y="15" width="10" height="10" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="15" y="15" width="10" height="10" rx="1.5" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <div class="section-card-content">
+            <div class="section-card-tag">Section 4</div>
+            <h3 class="section-card-title">Digital Experiences &amp; AI</h3>
+            <p class="section-card-desc">Tech familiarity, AI usage, chatbot &amp; assistant attitudes, AI agent readiness, concerns, and future preferences.</p>
+            <div class="section-card-meta">11 questions &middot; Topline &amp; cross-tab</div>
+          </div>
+          <div class="section-card-arrow" aria-hidden="true">&#8594;</div>
+        </article>
+      </div>
+
+      <div class="home-highlight-section">
+        <h3 class="highlight-title">Key Insights at a Glance</h3>
+        <div class="insights-grid" id="insights-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPLORER VIEW -->
+    <div id="view-explorer" class="view" role="region" aria-label="Data Explorer">
+      <div class="explorer-layout">
+
+        <!-- Sidebar -->
+        <aside class="explorer-sidebar" role="complementary" aria-label="Question navigation">
+          <div class="sidebar-header">
+            <h2 class="sidebar-section-title" id="sidebar-section-title"></h2>
+            <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <div class="sidebar-search">
+            <input type="search" id="question-search" placeholder="Search questions..." aria-label="Search questions" class="search-input" />
+          </div>
+          <nav class="question-list" id="question-list" role="navigation" aria-label="Questions">
+            <!-- Populated by JS -->
+          </nav>
+        </aside>
+
+        <!-- Main chart area -->
+        <div class="explorer-main">
+          <div class="explorer-toolbar">
+            <div class="breadcrumb" id="breadcrumb" aria-label="Breadcrumb" role="navigation">
+              <button class="breadcrumb-home" id="breadcrumb-home" aria-label="Go to overview">Overview</button>
+              <span class="breadcrumb-sep" aria-hidden="true">/</span>
+              <span class="breadcrumb-section" id="breadcrumb-section"></span>
+            </div>
+
+            <div class="toolbar-controls">
+              <!-- Chart type switcher -->
+              <div class="chart-type-switcher" role="group" aria-label="Chart type" id="chart-type-switcher">
+                <button class="chart-type-btn active" data-type="bar" title="Horizontal Bar" aria-pressed="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="3" width="10" height="2.5" rx="1" fill="currentColor"/><rect x="2" y="7" width="8" height="2.5" rx="1" fill="currentColor"/><rect x="2" y="11" width="12" height="2.5" rx="1" fill="currentColor"/></svg>
+                </button>
+                <button class="chart-type-btn" data-type="vbar" title="Vertical Bar" aria-pressed="false">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="6" width="3" height="8" rx="1" fill="currentColor"/><rect x="6.5" y="4" width="3" height="10" rx="1" fill="currentColor"/><rect x="11" y="2" width="3" height="12" rx="1" fill="currentColor"/></svg>
+                </button>
+                <button class="chart-type-btn" data-type="radar" title="Radar" aria-pressed="false">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polygon points="8,2 14,6 12,13 4,13 2,6" stroke="currentColor" stroke-width="1.5" fill="none"/><polygon points="8,5 11.5,7.5 10.5,11.5 5.5,11.5 4.5,7.5" stroke="currentColor" stroke-width="1" fill="none"/></svg>
+                </button>
+                <button class="chart-type-btn" data-type="heatmap" title="Heatmap" aria-pressed="false">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="0.5" fill="currentColor" opacity="0.9"/><rect x="9" y="2" width="5" height="5" rx="0.5" fill="currentColor" opacity="0.4"/><rect x="2" y="9" width="5" height="5" rx="0.5" fill="currentColor" opacity="0.5"/><rect x="9" y="9" width="5" height="5" rx="0.5" fill="currentColor" opacity="0.8"/></svg>
+                </button>
+                <button class="chart-type-btn" data-type="pie" title="Pie/Donut" aria-pressed="false">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M8 8 L8 2 A6 6 0 0 1 13.2 11z" fill="currentColor" opacity="0.7"/></svg>
+                </button>
+                <button class="chart-type-btn" data-type="table" title="Data Table" aria-pressed="false">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M2 6h12M6 6v8" stroke="currentColor" stroke-width="1.5"/></svg>
+                </button>
+              </div>
+
+              <!-- Export -->
+              <div class="export-group" role="group" aria-label="Export options">
+                <button class="export-btn" id="btn-download-png" title="Download chart as PNG" aria-label="Download chart as PNG">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1v8M4 6l3 3 3-3M2 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  PNG
+                </button>
+                <button class="export-btn" id="btn-download-csv" title="Download data as CSV" aria-label="Download data as CSV">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1v8M4 6l3 3 3-3M2 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  CSV
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question header -->
+          <div class="question-header" id="question-header">
+            <div class="question-meta">
+              <span class="question-number-badge" id="question-number-badge"></span>
+              <span class="question-section-badge" id="question-section-badge"></span>
+            </div>
+            <h2 class="question-text" id="question-text"></h2>
+          </div>
+
+          <!-- Filter controls -->
+          <div class="filter-bar" id="filter-bar" role="group" aria-label="Data filters">
+
+            <!-- Dimension toggle (Category vs Sector) -->
+            <div class="filter-group" id="dimension-toggle-group">
+              <span class="filter-label">View by:</span>
+              <div class="toggle-group" role="group" aria-label="Cross-tab dimension">
+                <button class="toggle-btn active" data-dimension="by_category" id="dim-btn-category">By Category</button>
+                <button class="toggle-btn" data-dimension="by_sector" id="dim-btn-sector">By Sector</button>
+              </div>
+            </div>
+
+            <!-- Activity selector for Q13/Q14/Q15 -->
+            <div class="filter-group" id="activity-selector-group" style="display:none">
+              <label class="filter-label" for="activity-select">Activity:</label>
+              <select class="filter-select" id="activity-select" aria-label="Select CX activity"></select>
+            </div>
+
+            <!-- Column selector -->
+            <div class="filter-group" id="column-selector-group">
+              <span class="filter-label">Show columns:</span>
+              <div class="column-chips" id="column-chips" role="group" aria-label="Column selection"></div>
+              <button class="chip-btn chip-action" id="btn-select-all-cols">All</button>
+              <button class="chip-btn chip-action" id="btn-clear-cols">Clear</button>
+            </div>
+
+            <!-- Sort -->
+            <div class="filter-group">
+              <label class="filter-label" for="sort-select">Sort:</label>
+              <select class="filter-select" id="sort-select" aria-label="Sort responses">
+                <option value="net_desc">NET (high to low)</option>
+                <option value="net_asc">NET (low to high)</option>
+                <option value="alpha">Alphabetical</option>
+                <option value="original">Original order</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Chart container -->
+          <div class="chart-area" id="chart-area">
+            <div id="main-chart" class="chart-canvas" role="img" aria-label="Chart visualization"></div>
+            <div id="table-view" class="table-view" style="display:none" aria-live="polite"></div>
+            <div id="chart-placeholder" class="chart-placeholder">
+              <div class="placeholder-icon" aria-hidden="true">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="8" y="16" width="14" height="32" rx="2" fill="#3ECAC8" opacity="0.3"/><rect x="26" y="24" width="14" height="24" rx="2" fill="#3ECAC8" opacity="0.5"/><rect x="44" y="8" width="14" height="40" rx="2" fill="#3ECAC8" opacity="0.8"/></svg>
+              </div>
+              <p>Select a question from the sidebar to begin exploring</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Merkle</strong> &mdash; A dentsu Company
+      </div>
+      <div class="footer-meta">
+        CX Imperatives 2026 &middot; n=2,500 respondents &middot; 30 countries &middot; Field: 2025
+      </div>
+      <div class="footer-note">
+        Data Explorer built with <a href="https://echarts.apache.org" target="_blank" rel="noopener" class="footer-link">Apache ECharts</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/data-utils.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
